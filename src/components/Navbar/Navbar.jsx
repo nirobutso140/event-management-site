@@ -6,20 +6,31 @@ const Navbar = () => {
             <div className="navbar">
                 <p className="logo">Charm & Cheer</p>
                 <div className="links">
-                   <li><NavLink to='/' 
+                    <li><NavLink to='/'
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-red-400 " : ""
+                        }
+                    >Home</NavLink></li>
+
+                    <li><NavLink to='/about'
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-red-400 " : ""
+                        }
+                    >About Us</NavLink></li>
+                    <li><NavLink to='/team' 
                         className={({ isActive, isPending }) =>
                         isPending ? "pending" : isActive ? "text-red-400 " : ""
                     }
-                    >Home</NavLink></li>
-                   <li> <NavLink to='/login'
+                    >Our Team</NavLink></li>
+                    <li> <NavLink to='/login'
                         className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "text-red-400" : ""
-                    }
+                            isPending ? "pending" : isActive ? "text-red-400" : ""
+                        }
                     >Login</NavLink></li>
-                   <li><NavLink to='/register'
-                      className={({ isActive, isPending }) =>
-                      isPending ? "pending" : isActive ? "text-red-400" : ""
-                    }
+                    <li><NavLink to='/register'
+                        className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-red-400" : ""
+                        }
                     >Register</NavLink></li>
                 </div>
             </div>

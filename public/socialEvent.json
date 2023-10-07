@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "image": "/image/wedding.jpg",
+      "name": "Wedding Planning",
+      "price": "$5,000 - $10,000",
+      "shortDescription": "Create your dream wedding with our expert planning services."
+    },
+    {
+      "id": 2,
+      "image": "/image/birthday.jpg",
+      "name": "Birthday Party Coordination",
+      "price": "$1,500 - $3,000",
+      "shortDescription": "Celebrate special birthdays stress-free with our party planning expertise."
+    },
+    {
+        "id": 3,
+      "image": "/image/family.jpg",
+      "name": "Family Reunion Organization",
+      "price": "$7,000 - $15,000",
+      "shortDescription": "Assisting with coordinating family reunions, bringing relatives together for quality time."
+    },
+    {
+        "id": 4,
+      "image": "/image/Anniversary.jpg",
+      "name": "Anniversary Celebration",
+      "price": "$3,500 - $7,000",
+      "shortDescription": "Plan memorable anniversary gatherings to cherish your love story."
+    },
+    {
+        "id": 5,
+      "image": "/image/baby.jpg",
+      "name": "Baby Shower Planning",
+      "price": "$2,000 - $4,000",
+      "shortDescription": "Organizing events to celebrate expecting parents and reveal the gender of a baby."
+    },
+    {
+        "id": 6,
+      "image": "/image/engagement.jpg",
+      "name": "Engagement Party Coordination",
+      "price": "$5,500 - $12,000",
+      "shortDescription": "Planning pre-wedding engagement parties to celebrate and announce engagements."
+    }
+  ]
+  

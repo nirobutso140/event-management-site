@@ -6,7 +6,7 @@ const Banner = () => {
            <div className="banner">
                <div className="banner_content">
                     <h1 className='banner_title'>Charm & Cheer Events</h1>
-                    <p className='banner_desc'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br /> Odio neque quas voluptatum blanditiis nostrum sit <br /> ut repudiandae facere, quia rerum.</p>
+                    <p className='banner_desc'>Our team of dedicated event managers specializes in transforming ideas into reality, <br /> bringing creativity, precision, and meticulous planning to every event.</p>
                </div>
            </div>
         </>

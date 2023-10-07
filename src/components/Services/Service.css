@@ -1,0 +1,25 @@
+.services{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    place-items: center;
+}
+.card{
+    margin: 40px 0;
+}
+.service_title{
+    margin-top: 40px;
+    font-size: 2rem;
+    color: #ff4ed6;
+    font-family: 'Dancing Script', cursive;
+}
+.card-title{
+    color: #f82dc9;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+}
+.card_price{
+    color: gray;
+}
+.card_desc{
+    color: gray;
+}

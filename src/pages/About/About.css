@@ -1,0 +1,16 @@
+.about{
+    display: flex;
+
+}
+.about img{
+    width: 40%;
+}
+.about_desc{
+
+    padding: 0 100px;
+    color: gray;
+}
+.aboout_title{
+    font-size: 4rem;
+    color: #ff34d0;
+}
