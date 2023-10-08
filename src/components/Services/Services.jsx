@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import './Service.css'
 import { useEffect, useState } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 
 
 const Services = () => {
@@ -12,6 +14,10 @@ const Services = () => {
             .then(data => setService(data))
     }, [])
 
+    useEffect(()=>{
+       AOS.init({duration: 2000})
+    })
+
 
     return (
         <>
@@ -20,7 +26,7 @@ const Services = () => {
                 
                 {
                     service.map(card => (
-                      <div className="card card-compact w-80 h-96 bg-base-100 shadow-xl" key={card.id}>
+                      <div className="card card-compact w-80 h-96 bg-base-100 shadow-xl" key={card.id} data-aos={card.animation}>
                         <figure><img src={card.image} alt="Shoes" /></figure>
                         <div className="card-body">
                           <h2 className="card-title">{card.name}</h2>
