@@ -13,6 +13,7 @@ import Error from './pages/Error/Error';
 import Team from './pages/Team/Team';
 import About from './pages/About/About';
 import SingleService from './pages/SingleService/SingleService';
+import ContextProvider from './Provider/ContextProvider';
 
 
 const router = createBrowserRouter([
@@ -53,6 +54,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <RouterProvider router={router} />
+       <ContextProvider>
+       <RouterProvider router={router} />
+       </ContextProvider>
+       
   </React.StrictMode>,
 )
