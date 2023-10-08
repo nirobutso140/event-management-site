@@ -1,0 +1,12 @@
+.singleService{
+    padding: 50px;
+}
+
+.details_title{
+    font-size: 2rem;
+    color: #ff34d0;
+    font-family: 'Dancing Script', cursive;
+}
+.details_desc{
+    color: gray;
+}

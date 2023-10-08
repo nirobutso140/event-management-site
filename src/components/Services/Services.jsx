@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Service.css'
 import { useEffect, useState } from "react";
 
@@ -26,7 +27,7 @@ const Services = () => {
                           <p className='card_price'>{card.price}</p>
                           <p className='card_desc'>{card.shortDescription}</p>
                           <div className="card-actions justify-end">
-                            <button className="btn btn-outline btn-secondary">Details</button>
+                            <Link to={`/service/${card.id}`}><button className="btn btn-outline btn-secondary">Details</button></Link>
                           </div>
                         </div>
                       </div>

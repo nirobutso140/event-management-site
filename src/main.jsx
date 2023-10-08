@@ -12,6 +12,7 @@ import Register from './pages/Register/Register';
 import Error from './pages/Error/Error';
 import Team from './pages/Team/Team';
 import About from './pages/About/About';
+import SingleService from './pages/SingleService/SingleService';
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,12 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register/>,
+      },
+      {
+    
+        path: '/service/:id',
+        element: <SingleService/>,
+        loader: ()=> fetch('/socialEvent.json')
       },
     ],
   },
