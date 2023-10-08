@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Login = () => {
     return (
         <>
-            <div className="register_form">
+            <div className="">
                 <div className="hero min-h-screen">
                     <div className="hero-content flex-col">
                         <div className="text-center lg:text-left">
