@@ -1,11 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Register.css'
 import { useContext, useState } from 'react';
+import swal from "sweetalert";
 import { AuthContext } from '../../Provider/ContextProvider';
 const Register = () => {
     const [registerError, setRegisterError] = useState('')
     const [success, setSuccess] = useState('')
     const {createUser} = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const hadleRegister = (e) =>{
         e.preventDefault()
@@ -25,6 +27,9 @@ const Register = () => {
         .then(result=>{
             console.log(result.user);
             setSuccess('Congratulation!!! Your Account Created Successfully')
+            e.target.reset()
+            swal("Congratulation", "your account created successfully", "success");
+            navigate('/')
         })
         .catch(error=>{
             console.error(error)

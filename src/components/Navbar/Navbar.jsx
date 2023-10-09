@@ -4,14 +4,14 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/ContextProvider";
 const Navbar = () => {
 
-   const {user, logOut} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
 
-   const handleLogOut = () =>{
-       logOut()
-       .then(()=>console.log("logout successfully"))
-       .catch(error =>console.error(error))
-   }
+    const handleLogOut = () => {
+        logOut()
+            .then(() => console.log("logout successfully"))
+            .catch(error => console.error(error))
+    }
 
     return (
         <>
@@ -24,16 +24,21 @@ const Navbar = () => {
                         }
                     >Home</NavLink></li>
 
-                    <li><NavLink to='/about'
-                        className={({ isActive, isPending }) =>
-                            isPending ? "pending" : isActive ? "text-red-400 " : ""
-                        }
-                    >About Us</NavLink></li>
-                    <li><NavLink to='/team' 
-                        className={({ isActive, isPending }) =>
-                        isPending ? "pending" : isActive ? "text-red-400 " : ""
+                    {
+                        user &&
+                        <>
+                            <li><NavLink to='/about'
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "text-red-400 " : ""
+                                }
+                            >About Us</NavLink></li>
+                            <li><NavLink to='/team'
+                                className={({ isActive, isPending }) =>
+                                    isPending ? "pending" : isActive ? "text-red-400 " : ""
+                                }
+                            >Our Team</NavLink></li>
+                        </>
                     }
-                    >Our Team</NavLink></li>
                     <li> <NavLink to='/login'
                         className={({ isActive, isPending }) =>
                             isPending ? "pending" : isActive ? "text-red-400" : ""
@@ -46,17 +51,17 @@ const Navbar = () => {
                     >Register</NavLink></li>
                 </div>
                 <div className="userInfo_logout">
-                   {
-                       user?
-                       <>
-                       <span>{user.email}</span>
-                       <button  onClick={handleLogOut} className="btn btn-sm">Log out</button>
-                       </> 
-                       : 
-                       <Link to='/login'>
-                         <button className="btn btn-sm">Log in</button>
-                       </Link>
-                   }
+                    {
+                        user ?
+                            <>
+                                <span>{user.email}</span>
+                                <button onClick={handleLogOut} className="btn btn-sm">Log out</button>
+                            </>
+                            :
+                            <Link to='/login'>
+                                <button className="btn btn-sm">Log in</button>
+                            </Link>
+                    }
                 </div>
             </div>
         </>

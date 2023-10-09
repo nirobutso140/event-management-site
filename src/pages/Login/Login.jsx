@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/ContextProvider";
+import swal from "sweetalert";
 
 
 
@@ -9,22 +10,27 @@ const Login = () => {
     const {loginUser} = useContext(AuthContext)
     const [loginError, setLoginError] = useState('')
     const [loginSuccess, setLoginSuccess] = useState('')
+    const navigate = useNavigate()
     
     const handleLogin = (e) =>{
         e.preventDefault()
         const email = e.target.email.value
         const password = e.target.password.value
         console.log(email, password);
+        setLoginError('')
+        setLoginSuccess('')  
+
         loginUser(email, password)
-        // setLoginError('')
-        // setLoginSuccess('')
-        
         .then(result=>{
             console.log(result.user);
             setLoginSuccess("You Logged In Successfully!!!")
+            e.target.reset()
+            swal("Congratulation!","You Logged In Successfully", "success");
+            navigate('/')   
         })
         .catch(error=>{
             setLoginError(error.message)
+            swal("Sorry!","You enter wrong email or password", "error");
         })
     }
 
@@ -59,7 +65,7 @@ const Login = () => {
                                 <p>Are you new? please <Link to='/register'><button className="btn btn-link">Register</button> </Link></p>
                                 {
 
-                                        loginError? <p className="text-red-600">{loginError}</p> : <p className="text-green-600">{loginSuccess}</p>
+                                     loginError?  <p className="text-red-600">{loginError}</p> : <p className="text-green-600">{loginSuccess}</p>
                                 }
                             </form>
 
