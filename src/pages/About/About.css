@@ -3,14 +3,34 @@
 
 }
 .about img{
-    width: 40%;
+    width: 400px;
 }
 .about_desc{
 
-    padding: 0 100px;
+    padding: 0 40px;
     color: gray;
 }
 .aboout_title{
     font-size: 4rem;
     color: #ff34d0;
 }
+
+@media only screen and (max-width: 768px) {
+    .about{
+       flex-direction: column;
+    }
+    .about img{
+        display: block;
+        margin: auto;
+    }
+ }
+ 
+ @media only screen and (max-width: 600px) {
+    .about{
+        flex-direction: column;
+     }
+     .about img{
+        display: block;
+        margin: auto;
+    }
+ }

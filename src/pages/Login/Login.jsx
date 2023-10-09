@@ -2,15 +2,27 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/ContextProvider";
 import swal from "sweetalert";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { app } from "../../firebase/firebase.config";
 
 
+const auth = getAuth(app)
+const googleProvider = new GoogleAuthProvider
 
 const Login = () => {
+
+    const handleGoogleAuthentication = () =>{
+        signInWithPopup(auth, googleProvider)
+        .then((result)=>console.log(result.user))
+        .catch(error=>console.error(error))
+    }
   
-    const {loginUser} = useContext(AuthContext)
+    const {loginUser, user} = useContext(AuthContext)
     const [loginError, setLoginError] = useState('')
     const [loginSuccess, setLoginSuccess] = useState('')
     const navigate = useNavigate()
+
+
     
     const handleLogin = (e) =>{
         e.preventDefault()
@@ -30,7 +42,6 @@ const Login = () => {
         })
         .catch(error=>{
             setLoginError(error.message)
-            swal("Sorry!","You enter wrong email or password", "error");
         })
     }
 
@@ -40,7 +51,7 @@ const Login = () => {
                 <div className="hero min-h-screen">
                     <div className="hero-content flex-col">
                         <div className="text-center lg:text-left">
-                            <h1 className="text-5xl font-bold">Login now!</h1>
+                            <h1 className="text-5xl text-pink-300 font-bold">Login now!</h1>
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm bg-base-100">
                             <form onSubmit={handleLogin} className="card-body">
@@ -63,6 +74,7 @@ const Login = () => {
                                     <button className="btn btn-secondary">Login</button>
                                 </div>
                                 <p>Are you new? please <Link to='/register'><button className="btn btn-link">Register</button> </Link></p>
+                                <button onClick={handleGoogleAuthentication}>google signin</button>
                                 {
 
                                      loginError?  <p className="text-red-600">{loginError}</p> : <p className="text-green-600">{loginSuccess}</p>

@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import './Navbar.css'
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/ContextProvider";
+
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext)
