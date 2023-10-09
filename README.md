@@ -1,3 +1,6 @@
+# Name of site : Social Event Management-->Charm & Cheer Events
+[Social Event Management site live link](https://social-event-management-a24af.web.app/)
+
 # Features of social event management project
 1. Service Section : Service section has 6 different type of service
 2. Curtomer Review : Customer review section has a image and customer review as description
@@ -45,7 +48,7 @@ For num = 2, the condition if (num) evaluates to true, so count is incremented t
 For num = 3, the condition if (num) evaluates to true, so count is incremented to 3.
 After the forEach loop completes, count is 3, which is the number of truthy values in the nums array.
 
-[Social Event Management site live link](social-event-management-a24af.web.app)
+
 
 
 
