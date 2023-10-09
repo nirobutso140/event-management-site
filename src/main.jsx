@@ -14,6 +14,7 @@ import Team from './pages/Team/Team';
 import About from './pages/About/About';
 import SingleService from './pages/SingleService/SingleService';
 import ContextProvider from './Provider/ContextProvider';
+import PrivetRoute from './components/Route/PrivetRoute';
 
 
 const router = createBrowserRouter([
@@ -28,11 +29,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/team",
-        element: <Team/>
+        element: <PrivetRoute><Team/></PrivetRoute> 
       },
       {
         path: "/about",
-        element: <About/>
+        element: <PrivetRoute><About/></PrivetRoute> 
       },
       {
         path: "/login",
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
       {
     
         path: '/service/:id',
-        element: <SingleService/>,
+        element: <PrivetRoute><SingleService/></PrivetRoute>,
         loader: ()=> fetch('/socialEvent.json')
       },
     ],

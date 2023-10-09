@@ -23,3 +23,15 @@
 .card_desc{
     color: gray;
 }
+
+@media only screen and (max-width: 768px) {
+   .services{
+      grid-template-columns: auto auto ;
+   }
+}
+
+@media only screen and (max-width: 600px) {
+    .services{
+        grid-template-columns: auto;
+     }
+}
